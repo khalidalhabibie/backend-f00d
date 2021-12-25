@@ -26,6 +26,7 @@ func GenerateNewTokens(id string, role string) (*Tokens, error) {
 		// Return token generation error.
 		return nil, err
 	}
+	
 
 	// Generate JWT Refresh token.
 	refreshToken, err := generateNewRefreshToken()
