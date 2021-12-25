@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"crypto/sha256"
+	"crypto/sha512"
 	"encoding/hex"
 	"fmt"
 	"os"
@@ -77,7 +77,7 @@ func generateNewAccessToken(id string, role string) (string, error) {
 
 func generateNewRefreshToken() (string, error) {
 	// Create a new SHA256 hash.
-	hash := sha256.New()
+	hash := sha512.New()
 
 	// Create a new now date and time string with salt.
 	refresh := os.Getenv("JWT_REFRESH_KEY") + time.Now().String()
