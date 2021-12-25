@@ -39,13 +39,6 @@ func ExtractTokenMetadata(c *fiber.Ctx) (*TokenMetadata, error) {
 		// Expires time.
 		expires := int64(claims["expires"].(float64))
 
-		// User credentials.
-		// credentials := map[string]bool{
-		// 	"book:create": claims["book:create"].(bool),
-		// 	"book:update": claims["book:update"].(bool),
-		// 	"book:delete": claims["book:delete"].(bool),
-		// }
-
 		return &TokenMetadata{
 			UserID:  userID,
 			Role:    role,
