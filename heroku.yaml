@@ -3,4 +3,5 @@ build:
     web:Dockerfile
 
 run:
-  web:./thena/helloworld
+  # web:./thena/helloworld
+  web:main.go
