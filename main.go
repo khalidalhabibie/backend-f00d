@@ -1,8 +1,10 @@
 package main
 
 import (
+	"log"
 	"os"
 
+	"github.com/joho/godotenv"
 	"github.com/thena/pkg/configs"
 	"github.com/thena/pkg/middleware"
 	"github.com/thena/pkg/routes"
@@ -11,8 +13,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 
 	_ "github.com/thena/docs" // load API Docs files (Swagger)
-
-	_ "github.com/joho/godotenv/autoload" // load .env file automatically
+	// load .env file automatically
 )
 
 // @title API
@@ -28,6 +29,14 @@ import (
 // @name Authorization
 // @BasePath /api
 func main() {
+
+	// load env
+	err := godotenv.Load()
+	if err != nil {
+		log.Println("error load env : ", err)
+		return
+	}
+
 	// Define Fiber config.
 	config := configs.FiberConfig()
 
