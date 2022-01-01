@@ -13,7 +13,6 @@ import (
 	"github.com/gofiber/fiber/v2"
 
 	_ "github.com/thena/docs" // load API Docs files (Swagger)
-	// load .env file automatically
 )
 
 // @title API
